@@ -1,3 +1,30 @@
+### Assemble and Link on Ubuntu
+
+Open a terminal on Ubuntu and run:
+
+`nasm -f bin filename.asm -o filename.com`
+
+This command converts your assembly code to a `.com` file.
+
+### Run the Executable in DOSBox
+
+After assembling the `.com` file, you can run it within DOSBox:
+
+#### i. Mount the Directory in DOSBox
+
+`mount c /path/to/your/directory
+c:`
+
+#### ii. Run the Program
+
+`filename.com`
+
+---
+
+---
+
+## Ubuntu
+
 ### 1. Assemble the File:
 
 If your file uses modern NASM syntax and is correctly formatted, assemble it like this:
@@ -5,6 +32,8 @@ If your file uses modern NASM syntax and is correctly formatted, assemble it lik
 `nasm -f elf64 yourfile.asm -o yourfile.o`
 
 ### 2. Link the Object File:
+
+For first one
 
 `    ld -o yourfile yourfile.o`
 
