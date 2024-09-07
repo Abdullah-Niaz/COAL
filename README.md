@@ -23,6 +23,22 @@ c:`
 
 ---
 
+## Window
+
+`nasm file.asm -o file.com`
+
+#### Listing
+
+`nasm file.asm  -o file.com -l file.lst`
+
+#### Run:
+
+`file.com`
+
+#### For Degugger
+
+`afd file.com`
+
 ## Ubuntu
 
 ### 1. Assemble the File:
