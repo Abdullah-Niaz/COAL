@@ -26,7 +26,7 @@ Finally, execute the program:
 
 ---
 
-### Assemble and Link on Ubuntu
+### Assemble and Link on Ubuntu Using NASM:
 
 Open a terminal on Ubuntu and run:
 
