@@ -16,6 +16,14 @@ Use the linker to create an executable from the object file:
 Finally, execute the program:
 `./hello`
 
+#### Summary:
+
+1. You installed NASM and GCC.
+2. Wrote an assembly program in VS Code.
+3. Assembled it using nasm.
+4. Linked it using ld.
+5. Ran it to print "Hello, World!" in the terminal.
+
 ---
 
 ### Assemble and Link on Ubuntu
