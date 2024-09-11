@@ -1,18 +1,20 @@
-section .data
-msg db 'Hello, World!', 0
+section  .data
+         msg       db 'Hello, World!', 0    ; Message text (null-terminated)
+         title     db 'Message Box', 0      ; Title of the message box (null-terminated)
 
-section .text
-global _start
+section  .text
+         global    _start                   ; Entry point for the program
+         extern    MessageBoxA              ; External function from user32.dll
+         extern    ExitProcess              ; External function from kernel32.dll
 
 _start:
-    ; Write the message to stdout
-    mov rax, 1          ; syscall number for sys_write
-    mov rdi, 1          ; file descriptor 1 is stdout
-    mov rsi, msg        ; pointer to message
-    mov rdx, 13         ; message length
-    syscall             ; invoke syscall
+    ; Call MessageBoxA
+         push      0                        ; uType: MB_OK (0)
+         push      offset title             ; lpCaption: Title of the message box
+         push      offset msg               ; lpText: Message text
+         push      0                        ; hWnd: Handle to owner window (NULL)
+         call      MessageBoxA              ; Call MessageBoxA function
 
-    ; Exit the program
-    mov rax, 60         ; syscall number for sys_exit
-    xor rdi, rdi        ; exit code 0
-    syscall             ; invoke syscall
+    ; Call ExitProcess
+         push      0                        ; uExitCode: Exit code (0)
+         call      ExitProcess              ; Call ExitProcess function
