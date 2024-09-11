@@ -1,3 +1,23 @@
+### Run on VsCode(linux)
+
+#### Assemble the Program
+
+In the terminal, navigate to the directory containing hello.asm and run the following command to assemble the code into an object file:
+
+`nasm -f elf32 -o hello.o hello.asm`
+
+#### Link the Object File:
+
+Use the linker to create an executable from the object file:
+`ld -m elf_i386 -o hello hello.o`
+
+#### Run the Program:
+
+Finally, execute the program:
+`./hello`
+
+---
+
 ### Assemble and Link on Ubuntu
 
 Open a terminal on Ubuntu and run:
