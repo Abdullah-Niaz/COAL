@@ -1,4 +1,32 @@
-### Assemble and Link on Ubuntu
+### Run on VsCode(linux)
+
+#### Assemble the Program
+
+In the terminal, navigate to the directory containing hello.asm and run the following command to assemble the code into an object file:
+
+`nasm -f elf32 -o hello.o hello.asm`
+
+#### Link the Object File:
+
+Use the linker to create an executable from the object file:
+`ld -m elf_i386 -o hello hello.o`
+
+#### Run the Program:
+
+Finally, execute the program:
+`./hello`
+
+#### Summary:
+
+1. You installed NASM and GCC.
+2. Wrote an assembly program in VS Code.
+3. Assembled it using nasm.
+4. Linked it using ld.
+5. Ran it to print "Hello, World!" in the terminal.
+
+---
+
+### Assemble and Link on Ubuntu Using NASM:
 
 Open a terminal on Ubuntu and run:
 
