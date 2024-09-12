@@ -1,0 +1,37 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Assemble",
+            "type": "shell",
+            "command": "nasm",
+            "args": [
+                "-f",
+                "win32",
+                "message.asm",
+                "-o",
+                "message.obj"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Link",
+            "type": "shell",
+            "command": "link",
+            "args": [
+                "message.obj",
+                "/SUBSYSTEM:WINDOWS",
+                "/OUT:message.exe"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        }
+    ]
+}
