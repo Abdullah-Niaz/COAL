@@ -1,0 +1,21 @@
+     1                                  section  .data
+     2 00000000 48656C6C6F2C20576F-              msg       db 'Hello, World!', 0    ; The message to display
+     2 00000009 726C642100         
+     3 0000000E 4D65737361676500                 title     db 'Message', 0          ; Title of the message box
+     4                                  
+     5                                  section  .text
+     6                                           global    _start
+     7                                           extern    MessageBoxA
+     8                                           extern    ExitProcess
+     9                                  
+    10                                  _start:
+    11                                      ; Call MessageBoxA
+    12 00000000 6A00                             push      0                        ; MB_OK type
+    13 00000002 68[0E000000]                     push      title                    ; Window title
+    14 00000007 68[00000000]                     push      msg                      ; Message text
+    15 0000000C 6A00                             push      0                        ; Handle to owner window (NULL)
+    16 0000000E E8(00000000)                     call      MessageBoxA
+    17                                  
+    18                                      ; Call ExitProcess
+    19 00000013 6A00                             push      0                        ; Exit code
+    20 00000015 E8(00000000)                     call      ExitProcess
