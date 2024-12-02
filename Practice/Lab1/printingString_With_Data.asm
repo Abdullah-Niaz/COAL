@@ -4,24 +4,22 @@
 	ans_str: .asciiz "Entered String is: "
 
 .text
-	# promt the string
 	la $a0, take_str
 	li $v0,4
 	syscall
 	
 	la $a0, str
-	li $a1, 10 # maximum length of string to read which is equal to 10 
-	
-	li $v0, 8 # reading string
+	li $a1, 10 #maximum length of string 
+	li $v0, 8
 	syscall
 	
-	# print the string 
+	
 	la $a0, ans_str
 	li $v0, 4
-	syscall
+	syscall 
 	
-	la $a0,str
-	li $v0, 4
+	la $a0, str
+	li $v0,4
 	syscall
 	
 	li $v0, 10
